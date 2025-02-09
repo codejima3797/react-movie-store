@@ -3338,7 +3338,7 @@ button,
 @media (max-width: 926px) and (orientation: landscape) {
     #homepage__body {
         min-height: 100vh;
-        padding: 20px 0;
+        padding: 20px 0 0 0;
     }
 
     .header {
@@ -3490,5 +3490,88 @@ button,
     .modal__content {
         max-height: 80vh;
         overflow-y: auto;
+    }
+
+    /* Common footer styles for all pages */
+    .footer__container {
+        width: 100%;
+        padding: 20px;
+        background-color: #242424;
+        margin-top: auto;
+    }
+
+    .footer__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .return__links--wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .footer__return--top {
+        text-align: center;
+    }
+
+    .footer__return--anchor {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .footer__links--wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .footer__link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .footer__link:hover {
+        text-decoration: underline;
+    }
+
+    /* Contact menu positioning */
+    .footer__link--contact {
+        position: relative;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .contact-menu {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #242424;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        width: max-content;
+    }
+
+    /* Ensure consistent spacing at bottom of page */
+    #homepage__body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .homepage__container {
+        flex: 1;
     }
 }
