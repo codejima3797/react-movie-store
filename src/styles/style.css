@@ -3244,8 +3244,8 @@ button,
 
 @media (max-width: 480px) {
     .hover-menu__btn.cart-btn.added {
+        padding-left: 12px !important;
         white-space: normal;  /* Allow text wrapping */
-        padding: 8px;        /* Add some padding */
         line-height: 1;    /* Adjust line height for better readability */
         display: flex;       /* Use flexbox */
         align-items: center; /* Center content vertically */
