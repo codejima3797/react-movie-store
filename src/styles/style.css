@@ -3421,7 +3421,7 @@ button,
 
     .learn-more {
         position: absolute;
-        bottom: 40px;  /* Changed from 40px to 20px */
+        bottom: 20px;  /* Changed from 40px to 20px */
         left: 8%;
         transform: translateX(-50%);
         display: flex;
@@ -3437,6 +3437,18 @@ button,
     }
 
     .search__bar--input {
+        width: 50%;
+    }
+
+    .cart__totals {
+        width: 50%;
+    }
+
+    .cart__total {
+        width: 100%;
+    }
+
+    .cart__buy--btn {
         width: 50%;
     }
 
