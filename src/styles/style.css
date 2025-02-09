@@ -3333,3 +3333,150 @@ button,
         align-items: center;
     }
 }
+
+/* Add landscape orientation styles for mobile devices */
+@media (max-width: 926px) and (orientation: landscape) {
+    #homepage__body {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    .homepage__container {
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 20px;
+        height: auto;
+        align-items: center;
+    }
+
+    .landing__img--wrapper {
+        width: 40%;
+        min-width: 300px;
+        margin: 0;
+    }
+
+    .landing__img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .header__text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+        padding-top: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header__title {
+        font-size: 24px;
+        width: 100%;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .header__subtitle {
+        font-size: 18px;
+        margin-bottom: 16px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .header__browse--btn {
+        padding: 8px 8px;
+        font-size: 12px;
+        width: 40%;
+        max-height: 56px;
+        margin-bottom: 0;
+    }
+
+    .nav__slogan {
+        display: none;
+    }
+
+    .nav {
+        padding-top: 0;
+    }
+
+    .nav__links {
+        right: 0;
+        top: 0;
+    }
+
+    .nav__link {
+        padding: 0 0 8px 0
+    }
+
+    .nav__logo--wrapper {
+        padding-top: 0;
+        padding-left: 12px;
+    }
+
+    .learn-more {
+        position: absolute;
+        bottom: 40px;  /* Changed from 40px to 20px */
+        left: 8%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .search__bar--container {
+        padding-top: 40px;
+    }
+
+    .search__bar--input {
+        width: 50%;
+    }
+
+    .about__container {
+        padding: 20px;
+    }
+
+    .about__title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .about__para {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .learn-more {
+        position: relative;
+        margin-top: 15px;
+    }
+
+    /* Adjust footer for landscape */
+    .footer__container {
+        padding: 10px 20px;
+    }
+
+    .footer__wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer__links--wrapper {
+        gap: 15px;
+    }
+
+    /* Ensure modals are properly centered in landscape */
+    .modal__content {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
