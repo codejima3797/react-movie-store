@@ -1508,7 +1508,7 @@ body.modal-open {
 
 .learn-more {
     position: absolute;
-    bottom: 20px;  /* Changed from 40px to 20px */
+    bottom: 32px;  /* Changed from 40px to 20px */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
