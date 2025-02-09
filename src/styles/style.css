@@ -2579,7 +2579,7 @@ select#state option {
   }
 
   .learn-more {
-    margin-bottom: 92px;
+    margin-bottom: 112px;
   }
 
   .learn-more__text {
@@ -2714,7 +2714,7 @@ select#state option {
     padding-top: 4px;
     height: 48px;
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   .search__container {
@@ -2930,10 +2930,6 @@ select#state option {
     margin-top: 8px;  /* Small space for the icon */
   }
 
-  .cart {
-    padding-top: 0;
-  }
-
   .form-row {
     display: flex !important;
     flex-direction: row !important;
@@ -3108,7 +3104,7 @@ button,
     }
 
     .cart {
-        padding: 24px 32px 40px 32px;
+        padding: 60px 32px 48px 32px;
     }
 
     .cart__item {
