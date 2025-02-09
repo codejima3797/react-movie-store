@@ -3107,6 +3107,10 @@ button,
         padding: 60px 32px 48px 32px;
     }
 
+    .cart__totals {
+        width: 100%;
+    }
+
     .cart__item {
         display: flex;
         align-items: center;
