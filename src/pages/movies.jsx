@@ -2,8 +2,6 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "../components/movieCard";
 import "../styles/style.css";
-import Home from "./home";
-import Cart from "./cart";
 import { useCart } from "../context/cartContext";
 import FAQModal from '../components/FAQModal';
 import { useClickOutside } from '../hooks/useClickOutside';
@@ -196,20 +194,6 @@ function Movies() {
     });
 
     setMovies(sortedMovies);
-  };
-
-  const toggleFavorite = (movieId) => {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorited = favorites.includes(movieId);
-
-    if (isFavorited) {
-      favorites = favorites.filter((id) => id !== movieId);
-    } else {
-      favorites.push(movieId);
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    setMovies([...movies]);
   };
 
   const handleSearch = async (event) => {
@@ -462,10 +446,7 @@ function Movies() {
                   </div>
                 </div>
                 <hr className="movie__break--line" />
-                <div className="loading-state" style={{ display: "none" }}>
-                  <div className="loading-spinner"></div>
-                  <p className="loading-text">Loading movies...</p>
-                </div>
+                
                 <div className="movies__list">
                   {loading ? (
                     <div className="loading-state">

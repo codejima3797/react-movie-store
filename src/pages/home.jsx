@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/style.css";
 import Movies from "./movies";
-import Favorites from "./cart";
 import homepage_img from "../Assets/homepage_img.webp";
 import { useCart } from "../context/cartContext";
 import FAQModal from '../components/FAQModal';
@@ -76,7 +75,7 @@ function Home() {
   return (
     <div lang="en">
       <div id="homepage__body">
-        <nav className="nav">
+        <nav className="nav home__nav">
           <div className="nav__logo--wrapper">
             <Link to="/">JMDB</Link>
           </div>

@@ -129,8 +129,6 @@ function Cart() {
     parseFloat(subtotal.replace(/,/g, "")) + parseFloat(tax.replace(/,/g, ""))
   );
 
-  console.log("Cart Items:", cartItems);
-
   const updateQuantity = (movieId, newQuantity) => {
     if (newQuantity < 1) return; // Prevent quantity from going below 1
     setCartItems((prevItems) =>
@@ -503,9 +501,7 @@ function Cart() {
             <h2 className="modal-title">Complete Your Purchase</h2>
             <p className="payment-disclaimer">
               * This website is a template/example site. None of the information
-              you fill out will be saved or used. If the information from a real
-              debit/credit card is used in this area, it will not charge the
-              card or save the card information.
+              you fill out will be saved, charged, or used for any purposes.
             </p>
 
             {paymentStatus === "initial" && (
