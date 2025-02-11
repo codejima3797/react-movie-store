@@ -37,11 +37,11 @@ function Footer() {
   const handleNavigateAndScroll = (e) => {
     e.preventDefault();
 
-    if (location.pathname === "/movies") {
+    if (location.pathname === "/Movies") {
       // For Movies page
       localStorage.setItem("pendingScroll", "true");
       window.location.replace("/");
-    } else if (location.pathname === "/cart") {
+    } else if (location.pathname === "/Cart") {
       // For Cart page
       localStorage.setItem("pendingScroll", "true");
       window.location.href = "/"; // Use href instead of replace for Cart

@@ -1,4 +1,4 @@
-import { useCart } from "../context/cartContext";
+import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import "../styles/style.css";
 import { useState, useEffect, useRef } from "react";
@@ -643,7 +643,7 @@ function Cart() {
                     Return Home
                   </Link>
                   <Link
-                    to="/movies"
+                    to="/Movies"
                     className="nav__button payment__browse--button"
                     onClick={() => {
                       setIsPaymentModalOpen(false);

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/cartContext';
+import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import Cart from './pages/Cart';
@@ -13,8 +13,8 @@ function App() {
           <Nav />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/Movies" element={<Movies />} />
+                <Route path="/Cart" element={<Cart />} />
             </Routes>
             <Footer />
         </CartProvider>
