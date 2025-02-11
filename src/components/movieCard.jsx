@@ -78,6 +78,7 @@ function MovieCard({ movie, hideRestricted, openModal, handleAddToCart, addedMov
         <p className="movie__title">
           <b>
             {movie.Title} 
+          &nbsp;
             <span className="movie__year">
               ({movie.Year}{movie.Rated ? ` • ${movie.Rated}` : ''})
             </span>

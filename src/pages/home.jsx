@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/style.css";
 import Movies from "./movies";
 import homepage_img from "../Assets/homepage_img.webp";
@@ -11,10 +11,6 @@ function Home() {
   const { cartItems } = useCart();
   const [feedbackSent, setFeedbackSent] = useState(false);
   const [feedbackText, setFeedbackText] = useState("");
-  const [isContactMenuOpen, setIsContactMenuOpen] = useState(false);
-  const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
-  const contactMenuRef = useRef(null);
-  const location = useLocation();
   const aboutRef = useRef(null);
 
   const handleArrowClick = () => {
@@ -23,22 +19,6 @@ function Home() {
       setArrowClicked(false);
     }, 300);
   };
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (contactMenuRef.current && 
-        !contactMenuRef.current.contains(event.target) && 
-        !event.target.closest('.footer__link--contact')) {
-        setIsContactMenuOpen(false);
-      }
-    }
-
-    document.addEventListener('click', handleClickOutside);
-    
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
 
   const scrollToAbout = (e) => {
     e.preventDefault();
@@ -73,47 +53,7 @@ function Home() {
   }, []);
 
   return (
-    <div lang="en">
       <div id="homepage__body">
-        <nav className="nav home__nav">
-          <div className="nav__logo--wrapper">
-            <Link to="/">JMDB</Link>
-          </div>
-
-          <div className="nav__slogan">Find your picks with just a few clicks!</div>
-
-          <div className="nav__links">
-            <Link to="/movies" className="nav__link">
-              <div className="nav__link--wrapper">
-                <i className="fa-solid fa-film"></i>
-                <span className="nav__link--text">Movies</span>
-              </div>
-            </Link>
-
-            <Link to="/cart" className="nav__link">
-              <div className="nav__link--wrapper">
-                <div className="icon-wrapper">
-                  <i className="fa-solid fa-cart-shopping"></i>
-                  {cartItems.length > 0 && (
-                    <span className="cart-badge">
-                      {cartItems.reduce(
-                        (total, item) => total + (item.quantity || 1),
-                        0
-                      ) > 99
-                        ? "99+"
-                        : cartItems.reduce(
-                            (total, item) => total + (item.quantity || 1),
-                            0
-                          )}
-                    </span>
-                  )}
-                </div>
-                <span className="nav__link--text cart__link--text">Cart</span>
-              </div>
-            </Link>
-          </div>
-        </nav>
-
         <section id="landing__page">
           <header>
               <div className="header__text">
@@ -136,7 +76,7 @@ function Home() {
               </div>
 
               <div 
-                className="learn-more" 
+                className="learn-more__wrapper" 
                 onClick={scrollToAbout}
                 style={{ cursor: 'pointer' }}
               >
@@ -145,6 +85,7 @@ function Home() {
               </div>
           </header>
         </section>
+
         <section id="about__section" ref={aboutRef}>
           <div className="about__container">
             <div className="about__row">
@@ -171,7 +112,9 @@ function Home() {
             </div>
           </div>
         </section>
+
         <hr className="home__break--line" />
+
         <section id="feedback__section">
           <div className="feedback__container">
             <div className="feedback__row">
@@ -223,84 +166,9 @@ function Home() {
             </div>
           </div>
         </section>
-        <footer>
-          <div className="footer__container">
-            <div className="footer__wrapper">
-              <div className="return__links--wrapper">
-                <h3 className="footer__return--top">
-                  <a className="footer__return--anchor" href="#">
-                    Return to Top
-                  </a>
-                </h3>
-                <div className="footer__links--wrapper">
-                  <Link
-                    to="/"
-                    className="footer__link"
-                    onClick={() => {
-                      setTimeout(() => {
-                        document
-                          .getElementById("about__section")
-                          .scrollIntoView({
-                            behavior: "smooth",
-                          });
-                      }, 100);
-                    }}
-                  >
-                    About
-                  </Link>
-                  <Link 
-                    to="#" 
-                    className="footer__link" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsFAQModalOpen(true);
-                    }}
-                  >
-                    FAQ
-                  </Link>
-                  <div className="footer__link--contact" onClick={(e) => {
-                    e.stopPropagation();
-                    setIsContactMenuOpen(!isContactMenuOpen);
-                  }}>
-                    <span className="footer__link">Contact</span>
-                    {isContactMenuOpen && (
-                      <div 
-                        ref={contactMenuRef}
-                        className="contact-menu active"
-                      >
-                        <div className="contact-menu__item">
-                          <span className="contact-menu__label">phone:</span>
-                          <span>(214) 519-3525</span>
-                        </div>
-                        <div className="contact-menu__item">
-                          <span className="contact-menu__label">email:</span>
-                          <span>jgray3797@gmail.com</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="footer__logo">
-                <Link
-                  to="/"
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    });
-                  }}
-                >
-                  JMDB
-                </Link>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
-      <FAQModal isOpen={isFAQModalOpen} onClose={() => setIsFAQModalOpen(false)} />
-    </div>
   );
 }
+
 
 export default Home;

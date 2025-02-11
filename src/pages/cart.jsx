@@ -2,7 +2,6 @@ import { useCart } from "../context/cartContext";
 import { Link } from "react-router-dom";
 import "../styles/style.css";
 import { useState, useEffect, useRef } from "react";
-import FAQModal from "../components/FAQModal";
 import { useClickOutside } from "../hooks/useClickOutside";
 
 function Cart() {
@@ -264,26 +263,6 @@ function Cart() {
   return (
     <>
       <div className="cart__container">
-        <nav className="nav">
-          <div className="nav__links">
-            <Link to="/movies" className="nav__link">
-              <div className="nav__link--wrapper">
-                <i className="fa-solid fa-film"></i>
-                <span className="nav__link--text">Movies</span>
-              </div>
-            </Link>
-            <Link to="/" className="nav__link">
-              <div className="nav__link--wrapper">
-                <i className="fa-solid fa-house"></i>
-                <span className="nav__link--text">Home</span>
-              </div>
-            </Link>
-          </div>
-          <div className="nav__logo--wrapper">
-            <Link to="/">JMDB</Link>
-          </div>
-        </nav>
-
         <div className="cart">
           <div className="cart__header">
             <h1>Shopping Cart</h1>
@@ -398,90 +377,6 @@ function Cart() {
           ))}
         </div>
       </div>
-      <footer className="footer__container">
-        <div className="footer__wrapper">
-          <div className="return__links--wrapper">
-            <h3 className="footer__return--top">
-              <a
-                className="footer__return--anchor"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                href="#"
-              >
-                Return to Top
-              </a>
-            </h3>
-            <div className="footer__links--wrapper">
-              <Link
-                to="/"
-                className="footer__link"
-                onClick={() => {
-                  setTimeout(() => {
-                    document.getElementById("about__section").scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }, 100);
-                }}
-              >
-                About
-              </Link>
-              <Link
-                to="#"
-                className="footer__link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsFAQModalOpen(true);
-                }}
-              >
-                FAQ
-              </Link>
-              <div
-                className="footer__link--contact"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsContactMenuOpen(!isContactMenuOpen);
-                }}
-              >
-                <span className="footer__link">Contact</span>
-                {isContactMenuOpen && (
-                  <div ref={contactMenuRef} className="contact-menu active">
-                    <div className="contact-menu__item">
-                      <span className="contact-menu__label">phone:</span>
-                      <span>(214) 519-3525</span>
-                    </div>
-                    <div className="contact-menu__item">
-                      <span className="contact-menu__label">email:</span>
-                      <span>jgray3797@gmail.com</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer__logo">
-          <Link
-            to="/"
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
-          >
-            JMDB
-          </Link>
-        </div>
-      </footer>
-      <FAQModal
-        isOpen={isFAQModalOpen}
-        onClose={() => setIsFAQModalOpen(false)}
-      />
 
       {/* Payment Modal */}
       {isPaymentModalOpen && (
@@ -525,7 +420,7 @@ function Cart() {
                     className={fieldErrors.fullName ? "error" : ""}
                   />
                   {fieldErrors.fullName && (
-                    <span className="error-message">
+                    <span className="payment-error">
                       {fieldErrors.fullName}
                     </span>
                   )}
@@ -584,7 +479,7 @@ function Cart() {
                         className={fieldErrors.state ? "error" : ""}
                       />
                       {fieldErrors.state && (
-                        <span className="error-message">
+                        <span className="payment-error">
                           {fieldErrors.state}
                         </span>
                       )}
@@ -636,7 +531,7 @@ function Cart() {
                       className={fieldErrors.zipCode ? "error" : ""}
                     />
                     {fieldErrors.zipCode && (
-                      <span className="error-message">
+                      <span className="payment-error">
                         {fieldErrors.zipCode}
                       </span>
                     )}
@@ -658,7 +553,7 @@ function Cart() {
                     className={fieldErrors.cardNumber ? "error" : ""}
                   />
                   {fieldErrors.cardNumber && (
-                    <span className="error-message">
+                    <span className="payment-error">
                       {fieldErrors.cardNumber}
                     </span>
                   )}
@@ -679,7 +574,7 @@ function Cart() {
                       className={fieldErrors.expiration ? "error" : ""}
                     />
                     {fieldErrors.expiration && (
-                      <span className="error-message">
+                      <span className="payment-error">
                         {fieldErrors.expiration}
                       </span>
                     )}
@@ -707,7 +602,7 @@ function Cart() {
                       className={fieldErrors.cvv ? "error" : ""}
                     />
                     {fieldErrors.cvv && (
-                      <span className="error-message">{fieldErrors.cvv}</span>
+                      <span className="payment-error">{fieldErrors.cvv}</span>
                     )}
                   </div>
                 </div>
@@ -736,10 +631,10 @@ function Cart() {
                   Thank you for your purchase! Your order has been received and
                   is on its way.
                 </p>
-                <div className="navigation-buttons">
+                <div className="navigation__buttons">
                   <Link
                     to="/"
-                    className="nav-button home-button"
+                    className="nav__button payment__home--button"
                     onClick={() => {
                       setIsPaymentModalOpen(false);
                       setPaymentStatus("initial");
@@ -749,7 +644,7 @@ function Cart() {
                   </Link>
                   <Link
                     to="/movies"
-                    className="nav-button browse-button"
+                    className="nav__button payment__browse--button"
                     onClick={() => {
                       setIsPaymentModalOpen(false);
                       setPaymentStatus("initial");
