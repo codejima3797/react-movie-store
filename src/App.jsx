@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/cartContext.jsx';
-import Home from './pages/Home.jsx';
-import Movies from './pages/Movies.jsx';
-import Cart from './pages/Cart.jsx';
-import Nav from './components/Nav.jsx';
-import Footer from './components/Footer.jsx';
+import { CartProvider } from './context/cartContext';
+import Home from '/src/pages/Home';
+import Movies from '/src/pages/Movies';
+import Cart from '/src/pages/Cart';
+import Nav from '/src/components/Nav';
+import Footer from '/src/components/Footer';
 
 function App() {
     return (
