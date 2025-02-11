@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 import "../styles/style.css";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/cartContext";
 import { useClickOutside } from "../hooks/useClickOutside";
 
 function Movies() {

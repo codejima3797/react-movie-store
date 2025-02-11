@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/cartContext";
 
 function Nav() {
   const location = useLocation();
