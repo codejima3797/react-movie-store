@@ -643,7 +643,7 @@ function Cart() {
                     Return Home
                   </Link>
                   <Link
-                    to="/Movies"
+                    to="/movies"
                     className="nav__button payment__browse--button"
                     onClick={() => {
                       setIsPaymentModalOpen(false);

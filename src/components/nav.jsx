@@ -14,8 +14,8 @@ function Nav() {
   );
 
   const isHomePage = location.pathname === "/";
-  const isMoviesPage = location.pathname === "/Movies";
-  const isCartPage = location.pathname === "/Cart";
+  const isMoviesPage = location.pathname === "/movies";
+  const isCartPage = location.pathname === "/cart";
 
   return (
     <>

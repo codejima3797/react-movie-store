@@ -60,7 +60,7 @@ function Home() {
                 </h1>
                 <h2 className="header__subtitle">Get started now</h2>
                 <button className="header__browse--btn">
-                  <Link className="browse__btn--anchor" to="/Movies">
+                  <Link className="browse__btn--anchor" to="/movies">
                     <b>Browse Movies</b>
                     <span>
                       <i className="fa-solid fa-arrow-right"></i>
