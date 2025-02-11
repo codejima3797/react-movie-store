@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import FAQModal from "./FAQModal";
+import "../styles/style.css";
 import { useEffect, useRef, useState } from "react";
 
 function Footer() {
