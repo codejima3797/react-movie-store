@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/cartContext';
-import Home from './pages/home';
-import Movies from './pages/movies';
-import Cart from './pages/cart';
-import Footer from './components/footer';
-import Nav from './components/nav';
+import { CartProvider } from './context/cartContext.jsx';
+import Home from './pages/home.jsx';
+import Movies from './pages/movies.jsx';
+import Cart from './pages/cart.jsx';
+import Nav from './components/nav.jsx';
+import Footer from './components/footer.jsx';
+
 function App() {
     return (
       <>
@@ -15,7 +16,7 @@ function App() {
                 <Route path="/movies" element={<Movies />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>
-        <Footer />
+            <Footer />
         </CartProvider>
       </>
     );

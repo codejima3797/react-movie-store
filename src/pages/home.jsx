@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/style.css";
-import Movies from "./movies";
 import homepage_img from "../Assets/homepage_img.webp";
 import { useCart } from "../context/cartContext";
-import FAQModal from '../components/FAQModal';
 
 function Home() {
   const [arrowClicked, setArrowClicked] = useState(false);
