@@ -1,8 +1,4 @@
-// components/MovieCard.jsx
-import { useState } from 'react';
-
 function MovieCard({ movie, hideRestricted, openModal, handleAddToCart, addedMovies, isActive, onMovieClick, isBlurred }) {
-    const [isMenuActive, setIsMenuActive] = useState(false);
     
     const isRestricted = movie.Rated === 'R' || 
                         movie.Rated === 'NC-17' || 
@@ -10,10 +6,6 @@ function MovieCard({ movie, hideRestricted, openModal, handleAddToCart, addedMov
                         movie.Rated === 'N/A' || 
                         movie.Rated === 'Not Rated' ||
                         movie.Rated === 'Unrated';
-    
-    const handleMovieClick = () => {
-        setIsMenuActive(!isMenuActive);
-    };
   
     return (
       <div 

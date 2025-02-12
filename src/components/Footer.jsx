@@ -4,6 +4,7 @@ import "../styles/style.css";
 import { useEffect, useRef, useState } from "react";
 
 function Footer() {
+  
   const [isContactMenuOpen, setIsContactMenuOpen] = useState(false);
   const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
   const contactMenuRef = useRef(null);

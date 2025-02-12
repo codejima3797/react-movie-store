@@ -14,7 +14,6 @@ function Cart() {
   } = useCart();
   const [toasts, setToasts] = useState([]);
   const [isContactMenuOpen, setIsContactMenuOpen] = useState(false);
-  const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [paymentDetails, setPaymentDetails] = useState({
     fullName: "",

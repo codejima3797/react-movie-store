@@ -4,6 +4,7 @@ import "../styles/style.css";
 import { useCart } from "../context/CartContext";
 
 function Nav() {
+  
   const location = useLocation();
   const { cartItems } = useCart();
 
