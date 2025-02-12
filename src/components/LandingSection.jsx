@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import homepage_img from "../assets/homepage_img.webp";
 
 export default function LandingSection({ scrollToAbout }) {
   return (
@@ -22,7 +21,11 @@ export default function LandingSection({ scrollToAbout }) {
           </div>
 
           <div className="landing__img--wrapper">
-            <img src={homepage_img} alt="" className="landing__img" />
+            <img 
+              src="/assets/homepage_img.webp"
+              alt="Homepage"
+              className="landing__img"
+            />
           </div>
 
           <div
